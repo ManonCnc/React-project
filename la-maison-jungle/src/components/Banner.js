@@ -5,7 +5,6 @@ import Description from "./Description"
 
 function Banner(){
     return (
-
         <div>
             <Header />
             <Cart />
