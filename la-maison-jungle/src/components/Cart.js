@@ -1,8 +1,10 @@
 import Article from './Article';
+import '../styles/Cart.css'
 
 function Cart() {
     return (
-      <div>
+      <div className='lmj-cart'>
+        <h2> Mon Panier</h2>
         <ul>
           <Article name="monstera" price='8'/>
           <Article name="lierre" price='10'/>

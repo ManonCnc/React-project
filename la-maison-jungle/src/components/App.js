@@ -1,13 +1,22 @@
-import logo from '../logo.svg';
 import '../App.css';
 import Banner from './Banner';
+import QuestionForm from './QuestionForm';
+import ShoppingList from './ShoppingList';
+import Footer from './Footer';
+
 
 function App() {
+
+ 
+
   return (
-    <div className="App">
+    <div className="App" >
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <Banner />
+        <QuestionForm  />
+        <ShoppingList/>
+        <Footer />
+
       </header>
     </div>
   );
