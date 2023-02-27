@@ -1,15 +1,31 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import '../styles/Cart.css'
 
 function Cart({ cart, updateCart }) {
 	const [isOpen, setIsOpen] = useState(true)
-	const total = cart.reduce(
-		(acc, plantType) => acc + plantType.amount * plantType.price,
+	const items = Object.keys(cart)
+	const total = items.reduce(
+		(acc, item) => acc + cart[item].amount * cart[item].price,
 		0
 	)
+  /*
+	useEffect(() => {
+		document.title = `LMJ: ${total}€ d'achats`;
+    const jsonTotal = JSON.stringify(total);
+    localStorage.setItem('total',JSON.parse(jsonTotal))
+	}, [total])
+
+  useEffect(() => {
+    var totalDisplay = localStorage.getItem('total');
+    alert(totalDisplay)
+	}, [])*/
+
 	return isOpen ? (
 		<div className='lmj-cart'>
-			<button className='lmj-cart-toggle-button' onClick={() => setIsOpen(false)}>
+			<button
+				className='lmj-cart-toggle-button'
+				onClick={() => setIsOpen(false)}
+			>
 				Fermer
 			</button>
 			{cart.length > 0 ? (
@@ -41,4 +57,4 @@ function Cart({ cart, updateCart }) {
 	)
 }
 
-  export default Cart
+export default Cart

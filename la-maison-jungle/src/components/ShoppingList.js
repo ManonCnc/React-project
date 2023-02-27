@@ -4,9 +4,8 @@ import PlantItem from './PlantItem';
 import Categories from './Categories';
 import { useState } from 'react';
 
-function ShoppingList({ cart, updateCart }) {
+function ShoppingList({ categorie, setCategorie, cart, updateCart }) {
 
-    const [categorie, setCategorie] = useState('all')
 
     function addToCart(name, price) {
 		const currentPlantSaved = cart.find((plant) => plant.name === name)
