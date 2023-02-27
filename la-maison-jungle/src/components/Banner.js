@@ -7,8 +7,6 @@ function Banner(){
     return (
         <div>
             <Header />
-            <Cart />
-            <Description />
         </div>
     )
 

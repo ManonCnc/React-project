@@ -17,7 +17,7 @@ function CategorieList() {
     )
 }
 
-function ShoppingList() {
+function ShoppingList({ cart, updateCart }) {
 
     return (
         <div>
@@ -26,7 +26,12 @@ function ShoppingList() {
 
             <ul className='lmj-plant-list'>
                 {plantList.map((plant) => (
+                    <div>
                     <PlantItem key={plant.id} name={plant.name}  cover={plant.cover} id={plant.id} light={plant.light} water={plant.water} />
+                    <button onClick={() => updateCart(cart + 1)}>Ajouter</button>
+
+                    </div>
+                    
                 ))}
             </ul>
         </div>
